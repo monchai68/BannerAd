@@ -14,13 +14,6 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text('Banner Ads Demo'),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              Text("You have pushed the button this many times:"),
-            ],
-          ),
-        ));
+        body: Container());
   }
 }
