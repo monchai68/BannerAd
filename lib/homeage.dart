@@ -12,12 +12,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   BannerAd? bannerAd;
   bool isLoaded = false;
+  final AdSize adSize = const AdSize(width: 320, height: 100);
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     bannerAd = BannerAd(
-        size: AdSize.banner,
+        size: adSize,
         adUnitId: AdHelper.bannerAdUnitId,
         listener: BannerAdListener(onAdLoaded: (ad) {
           setState(() {
@@ -45,10 +46,10 @@ class _HomePageState extends State<HomePage> {
           const Spacer(),
           // ignore: avoid_unnecessary_containers
           isLoaded
-              // ignore: avoid_unnecessary_containers
+              // ignore: avoid_unnecessary_containers, sized_box_for_whitespace
               ? Container(
                   child: AdWidget(ad: bannerAd!),
-                  height: 100,
+                  height: 250,
                 )
               : const SizedBox()
         ],
